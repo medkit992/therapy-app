@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: TherapyAppBeta2025
+      POSTGRES_DB: therapy_app_beta
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./therapy-backend
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=development
+
+volumes:
+  db_data:
