@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "nodenext", // ← fixes vite-related module resolution
+    "esModuleInterop": true, // ← fixes default import for 'path'
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "types": [ "vite/client", "node" ],
+    "paths": {
+      "@/*": [ "src/*" ]
+    }
+  }
+}
